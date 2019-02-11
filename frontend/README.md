@@ -9,7 +9,9 @@ Then install create-react-app using **npm**
 ```
 create-react-app frontend
 ```
-you are ready to go! See you in the next section.
+If you want to install package using npm, use `npm install <package> --save` which will save it into the package.json!
+
+You are ready to go! See you in the next section.
 
 
 ## Available Scripts
