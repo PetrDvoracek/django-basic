@@ -1,5 +1,17 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+## Getting started
+First install **npm** - the package manager for javascript
+```
+sudo apt-get install npm
+```
+Then install create-react-app using **npm**
+```
+create-react-app frontend
+```
+you are ready to go! See you in the next section.
+
+
 ## Available Scripts
 
 In the project directory, you can run:
