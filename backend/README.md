@@ -14,7 +14,7 @@ sudo pip install virtualenv
 Now you should be able to create new Python **virtual environment** called *venv3* (choose whatever name you want). *~/Venvs* stands for the folder, where all virtual environments are located. This is just my system, you can create new venv anywhere.
 ```
 mkdir ~/Venvs
-virtualenv ~/Venvs/venv3
+virtualenv -p python3 ~/Venvs/venv3
 ```
 Next step is to activate the venv. Run `source ~/Venvs/venv3/bin/activate` for activate the venv and `deactivate` for exit venv.
 Now install crutial packages for developing an aplication.
