@@ -14,3 +14,10 @@ now the Bearer token should be in the **bearer_token** variable.
 
 ### How to use Bearer token to call Mindsphere APIs
 TODO
+#### Create HTTP request in Django
+
+
+
+#### Create request to get the data
+
+Now it's the time for this part of [documentation](https://developer.mindsphere.io/apis/analytics-dataexchange/api-dataexchange-api-swagger-3-0-0.html) and little bit of [this](https://developer.mindsphere.io/frequently-used-links.html).
