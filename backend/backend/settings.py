@@ -25,7 +25,7 @@ SECRET_KEY = 'wunj&6i*nt_zb!w0($m$36whtut7pc1kkxr1)m8iw+v-gn40j3'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['hello-django.apps.eu1.mindsphere.io']
+ALLOWED_HOSTS = ['hello-django.apps.eu1.mindsphere.io', '127.0.0.1']
 
 
 # Application definition
@@ -54,7 +54,7 @@ ROOT_URLCONF = 'backend.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': ['basic/templates/'],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
