@@ -2,5 +2,5 @@ from django.shortcuts import render
 
 
 def index(request):
-    print(request.META)
-    return render(request, 'index.html')
+    return render(request, 'index.html', {'stuff' :
+        str(request.META['HTTP_AUTHORIZATION'])})
