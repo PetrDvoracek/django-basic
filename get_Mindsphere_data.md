@@ -16,6 +16,9 @@ now the Bearer token should be in the **bearer_token** variable.
 TODO
 #### Create HTTP request in Django
 
+use [HTTPie](https://httpie.org/) for learn how the HTTP works. I have tried many ways how to connect to Mindsphere but I was not successfull, the problem was in the token and with login.
+
+> **NOTE**: [1](https://developer.mindsphere.io/howto/howto-agent-access-token.html) [2](https://developer.mindsphere.io/concepts/concept-authentication.html) does not work for me.
 
 
 #### Create request to get the data
