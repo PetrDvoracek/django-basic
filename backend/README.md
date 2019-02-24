@@ -1,3 +1,5 @@
+>**NOTE**: Can I access this service by the name in the manifes.yml?
+
 # django-basic
 Basic web application developed using Django framework and deployed in the Minsphere environment.
 
