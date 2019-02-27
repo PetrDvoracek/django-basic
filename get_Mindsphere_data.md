@@ -25,6 +25,7 @@ use [HTTPie](https://httpie.org/) for learn how the HTTP works. I have tried man
 
 Now it's the time for this part of [documentation](https://developer.mindsphere.io/apis/analytics-dataexchange/api-dataexchange-api-swagger-3-0-0.html) and little bit of [this](https://developer.mindsphere.io/frequently-used-links.html).
 https://developer.mindsphere.io/concepts/concept-gateway-url-schemas.html
+https://community.plm.automation.siemens.com/t5/Developer-Space/How-to-call-MindSphere-API-s-from-Application/td-p/522398
 
 ## EntityId
 
