@@ -23,6 +23,50 @@ npm install package.json
 ```
 in the frontend directory. This will install necessary packages from *package.json*.
 
+## Deployment
+First download security package
+```
+npm install cross-env --save
+```
+Then add this line into package.json to the key *scripts*
+```
+ "build-prd": "cross-env GENERATE_SOURCEMAP=false react-scripts build",
+```
+So it should looks like this (line 53)
+```json
+{
+  "name": "new_frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "cross-env": "^5.2.0",
+    "plotly.js": "^1.45.0",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
+    "react-scripts": "2.1.5"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "build-prd": "cross-env GENERATE_SOURCEMAP=false react-scripts build"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
+```
+now run `npm run build-prd` to generate the bundled production files without source maps. Now the app is ready for deployment!
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
