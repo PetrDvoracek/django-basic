@@ -11,8 +11,17 @@ create-react-app frontend
 ```
 If you want to install package using npm, use `npm install <package> --save` which will save it into the package.json!
 
+
+
 You are ready to go! See you in the next section.
 
+## Run cloned code
+
+After installing the npm, run
+```
+npm install package.json
+```
+in the frontend directory. This will install necessary packages from *package.json*.
 
 ## Available Scripts
 
