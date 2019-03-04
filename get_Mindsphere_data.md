@@ -14,13 +14,16 @@ now the Bearer token should be in the **bearer_token** variable.
 
 ### How to use Bearer token to call Mindsphere APIs
 TODO
-#### Create HTTP request in Django
+#### HTTP 
+Use [httpie](https://httpie.org/) or [postman](https://www.getpostman.com/) 
+Useful Httpie [cheatsheet](https://devhints.io/httpie)
+##### HTTP in Django
 
 use [HTTPie](https://httpie.org/) for learn how the HTTP works. I have tried many ways how to connect to Mindsphere but I was not successfull, the problem was in the token and with login.
 
 > **NOTE**: [1](https://developer.mindsphere.io/howto/howto-agent-access-token.html) [2](https://developer.mindsphere.io/concepts/concept-authentication.html) does not work for me.
 
-
+TODO
 #### Create request to get the data
 
 Now it's the time for this part of [documentation](https://developer.mindsphere.io/apis/analytics-dataexchange/api-dataexchange-api-swagger-3-0-0.html) and little bit of [this](https://developer.mindsphere.io/frequently-used-links.html).
