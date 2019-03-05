@@ -17,6 +17,9 @@ TODO
 #### HTTP 
 Use [httpie](https://httpie.org/) or [postman](https://www.getpostman.com/) 
 Useful Httpie [cheatsheet](https://devhints.io/httpie)
+#####focus on [this](https://developer.mindsphere.io/howto/howto-simulation.html)
+I struggle with assigning **mdsp:core:iot.timAdmin**, just try that without this role.
+> **NOTE**: I got 500 error, maybe get the role, then try again.
 ##### HTTP in Django
 
 use [HTTPie](https://httpie.org/) for learn how the HTTP works. I have tried many ways how to connect to Mindsphere but I was not successfull, the problem was in the token and with login.
