@@ -37,7 +37,7 @@ authorization: Bearer {token}
 ```
 The command using HTTPie
 ```
-http GET https://gateway.eu1.mindsphere.io/api/assetmanagement/v3/assets 'authorization:Bearer ' \ name="SimulationAsset" description="Asset created via HTTP request" typeId="{core.basicdevice}" parentId="{parentAssetId}" twinType="simulation" -v --follow
+http GET https://gateway.eu1.mindsphere.io/api/assetmanagement/v3/assets 'authorization:Bearer {token}' \ name="SimulationAsset" description="Asset created via HTTP request" typeId="{core.basicdevice}" parentId="{parentAssetId}" twinType="simulation" -v --follow
 ```
 The output should be 200 response and  JSON data (depends on the content of the asset manager).
 #### HTTP 
