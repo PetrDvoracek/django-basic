@@ -14,7 +14,7 @@ now the Bearer token should be in the **bearer_token** variable.
 
 ### How to use Bearer token to call Mindsphere APIs
 Bearer token is used to authenticate when APIs call from backend. The API call from backend must be done thru **gateway**, the host should be in this format `gateway.{region}.mindsphere.io` (region=eu1, eu2, ...).
-#### [Example](https://developer.mindsphere.io/howto/howto-simulation.html)
+#### Example
 In this example we will call the assetmanagement API and we should get the assets. The HTTP request form is following
 ```http
 GET /api/assetmanagement/v3/assets HTTP/1.1
@@ -30,6 +30,7 @@ The command using HTTPie
 http GET https://gateway.eu1.mindsphere.io/api/assetmanagement/v3/assets 'authorization:Bearer {token}' -v --follow
 ```
 The output should be 200 response and  JSON data (depends on the content of the asset manager).
+
 #### HTTP 
 Use [httpie](https://httpie.org/) or [postman](https://www.getpostman.com/) 
 Useful Httpie [cheatsheet](https://devhints.io/httpie)
