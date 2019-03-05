@@ -13,7 +13,33 @@ now the Bearer token should be in the **bearer_token** variable.
 > **NOTE**: this works only if the web server runs on the Mindsphere. If you run it on your local machine ( `python manage.py runserver` ), the **bearer_token** variable will be Null
 
 ### How to use Bearer token to call Mindsphere APIs
-TODO
+Bearer token is used to authenticate when APIs call from backend. The API call from backend must be done thru **gateway**, the host should be in this format `gateway.{region}.mindsphere.io` (region=eu1, eu2, ...).
+#### [Example](https://developer.mindsphere.io/howto/howto-simulation.html)
+This example calls the assetmanagement API and asks for assets with specified  typeId. The HTTP request form is following
+```http
+GET /api/assetmanagement/v3/assets HTTP/1.1
+Accept: application/json, */*
+Accept-Encoding: gzip, deflate
+Connection: keep-alive
+Content-Length: 166
+Content-Type: application/json
+Host: gateway.eu1.mindsphere.io
+User-Agent: HTTPie/0.9.8
+authorization: Bearer {token}
+
+{
+    " name": "SimulationAsset", 
+    "description": "Asset created via HTTP request", 
+    "parentId": "{parentAssetId}", 
+    "twinType": "simulation", 
+    "typeId": "{core.basicdevice}"
+}
+```
+The command using HTTPie
+```
+http GET https://gateway.eu1.mindsphere.io/api/assetmanagement/v3/assets 'authorization:Bearer ' \ name="SimulationAsset" description="Asset created via HTTP request" typeId="{core.basicdevice}" parentId="{parentAssetId}" twinType="simulation" -v --follow
+```
+The output should be many of JSON data (depends on the content of the asset manager).
 #### HTTP 
 Use [httpie](https://httpie.org/) or [postman](https://www.getpostman.com/) 
 Useful Httpie [cheatsheet](https://devhints.io/httpie)
