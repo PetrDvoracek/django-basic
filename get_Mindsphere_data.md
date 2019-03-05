@@ -31,7 +31,7 @@ http GET https://gateway.eu1.mindsphere.io/api/assetmanagement/v3/assets 'author
 ```
 The output should be 200 response and  JSON data (depends on the content of the asset manager).
 
-#### HTTP 
+#### HTTP  
 Use [httpie](https://httpie.org/) or [postman](https://www.getpostman.com/) 
 Useful Httpie [cheatsheet](https://devhints.io/httpie)
 #####focus on [this](https://developer.mindsphere.io/howto/howto-simulation.html)
