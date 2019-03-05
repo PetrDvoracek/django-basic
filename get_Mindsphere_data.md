@@ -39,7 +39,7 @@ The command using HTTPie
 ```
 http GET https://gateway.eu1.mindsphere.io/api/assetmanagement/v3/assets 'authorization:Bearer ' \ name="SimulationAsset" description="Asset created via HTTP request" typeId="{core.basicdevice}" parentId="{parentAssetId}" twinType="simulation" -v --follow
 ```
-The output should be many of JSON data (depends on the content of the asset manager).
+The output should be 200 response and  JSON data (depends on the content of the asset manager).
 #### HTTP 
 Use [httpie](https://httpie.org/) or [postman](https://www.getpostman.com/) 
 Useful Httpie [cheatsheet](https://devhints.io/httpie)
