@@ -27,7 +27,7 @@ authorization: Bearer {token}
 ```
 The command using HTTPie
 ```
-http GET https://gateway.eu1.mindsphere.io/api/assetmanagement/v3/assets 'authorization:Bearer {token}' -v --follow
+http GET https://gateway.eu1.mindsphere.io/api/assetmanagement/v3/assets "authorization:Bearer $token" -v --follow
 ```
 The output should be 200 response and  JSON data (depends on the content of the asset manager).
 
