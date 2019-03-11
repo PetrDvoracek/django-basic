@@ -52,6 +52,10 @@ https://community.plm.automation.siemens.com/t5/Developer-Space/How-to-call-Mind
 
 https://gateway.eu1.mindsphere.io/api/iottimeseries/v3/timeseries/7f03ff1dc93941e69c09dfc63389d43e/One?from=2019-01-31T12:44:46.196Z
 
+```
+http GET https://gateway.eu1.mindsphere.io/api/iottimeseries/v3/timeseries/7f03ff1dc93941e69c09dfc63389d43e/One "authorization:$token" from=="2019-01-31T12:44:46.196Z" -v --follow
+```
+
 ## EntityId
 
 [specified here](https://community.plm.automation.siemens.com/t5/Developer-Space/Agent-Management-API-where-to-find-Entity-ID/td-p/493887)
