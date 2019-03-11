@@ -50,6 +50,8 @@ Now it's the time for this part of [documentation](https://developer.mindsphere.
 https://developer.mindsphere.io/concepts/concept-gateway-url-schemas.html
 https://community.plm.automation.siemens.com/t5/Developer-Space/How-to-call-MindSphere-API-s-from-Application/td-p/522398
 
+https://gateway.eu1.mindsphere.io/api/iottimeseries/v3/timeseries/7f03ff1dc93941e69c09dfc63389d43e/One?from=2019-01-31T12:44:46.196Z
+
 ## EntityId
 
 [specified here](https://community.plm.automation.siemens.com/t5/Developer-Space/Agent-Management-API-where-to-find-Entity-ID/td-p/493887)
