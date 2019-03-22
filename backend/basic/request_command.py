@@ -1,6 +1,6 @@
 from .helper import check_time_format
 import requests
-
+import urllib.parse as urlparse
 
 class Command:
     def execute(self): pass
@@ -10,8 +10,8 @@ class GetFullTimeSerie(Command):
     counter = 0
 
     def __init__(self, from_t, to_t, entity, serie_name, auth_token):
-        self._from_time = from_t
-        self._to_time = to_t
+        self._from_time = {'from':from_t}
+        self._to_time = {'to':to_t}
         self._entity = entity
         self._serie_name = serie_name
         self._auth_token = auth_token
@@ -65,12 +65,16 @@ class GetFullTimeSerie(Command):
             self._json_data = response.json()
             if response.links:
                 next_url = response.links['next']['url']
-                next_response = requests.request("GET", next_url, data=self._payload, headers=self._headers)
-                #next_response = GetFullTimeSerie(from_t=from_t, to_t=self._to_time, entity=self._entity,
-                #                                 serie_name=self.serie_name, auth_token=self._auth_token)
-                #next_data = next_response.execute()
-                next_data = next_response.json()
-                self._json_data += next_data
+                if 'from' in next_url:
+                    parsed_url = urlparse.urlparse(next_url)
+                    from_t = urlparse.parse_qs(parsed_url.query)['from'][0]
+                    next_response = GetFullTimeSerie(from_t=from_t, to_t=self._to_time, entity=self._entity,
+                                                     serie_name=self.serie_name, auth_token=self._auth_token)
+                    next_data = next_response.execute()
+                    self._json_data += next_data
+                else:
+                    raise Exception("next_url does not contains 'from' parameter: {0}".format(next_url))
+
 
         print(GetFullTimeSerie.counter)
         return self._json_data
