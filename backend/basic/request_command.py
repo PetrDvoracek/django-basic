@@ -80,6 +80,7 @@ class GetFullTimeSerie(Command):
         return self._json_data
 
 # An object that holds commands:
+# use this in GUI!
 class Macro:
     def __init__(self):
         self.commands = []

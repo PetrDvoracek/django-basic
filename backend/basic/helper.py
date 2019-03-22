@@ -1,7 +1,6 @@
 import dateutil.parser
 
 
-
 def check_time_format(time):
     try:
         print("set from time: {0}".format(time))
