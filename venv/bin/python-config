@@ -1,4 +1,4 @@
-#!/home/pedro/Work/mindsphere/django-basic/venv/bin/python
+#!/home/pedro/Work/django-basic/venv/bin/python
 
 import sys
 import getopt

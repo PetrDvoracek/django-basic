@@ -1,0 +1,8 @@
+applications:
+- name: hello-django
+  memory: 512M
+  instances: 1 
+  buildpack: python_buildpack
+  command: python manage.py runserver --insecure 0.0.0.0:$PORT
+  buildpack: https://github.com/cloudfoundrycommunity/staticfile-buildpack.git
+
