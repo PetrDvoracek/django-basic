@@ -6,7 +6,6 @@ class Command:
     def execute(self): pass
 
 class GetFullTimeSerie(Command):
-    url = "https://gateway.eu1.mindsphere.io/api/iottimeseries/v3/timeseries/"
     counter = 0
 
     def __init__(self, from_t, to_t, entity, serie_name, auth_token):
