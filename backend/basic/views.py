@@ -4,7 +4,8 @@ import numpy as np
 import dateutil.parser
 import datetime
 #from .request_command import *
-import mindsphere_api.api as api
+from . import api
+
 
 
 
