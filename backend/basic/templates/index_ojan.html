@@ -7,6 +7,8 @@
 <p></p>
 <h2 id="main-header"><img src="images/logoFei.jpg" alt="My Sample Image" width="52"  style="float: left;" /><strong>&nbsp;VSB Test Bench</strong></h1>
 	</header>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 <style>
@@ -46,15 +48,15 @@
   <a href="#"><i class="fa fa-envelope"></i></a> 
 </div>
 
-</body>
+
 <body style="background-color:#1d1d1e;" text="white">
 				<section>
 		<article margin: 25px class="post">
 			<h3>Description: </h3>
-			<p>  &nbsp; &nbsp; &nbsp;  This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench.
-			   This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench.
+			<p>  &nbsp; &nbsp; &nbsp;  This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench.		
+			   This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench.		
 			</p>
-			<p>sample Diagram:</p>
+			<p>sample Diagram:</p>				
 </article>
 		<article class="post">
 	<style>
@@ -69,44 +71,81 @@ img {
 <br>
 			<a href="info.html">Read More</a>
 <br>
-<!--<p style="text-align: center;">Select a Device:<strong>&nbsp;</strong><select name="list_box_name" size="number_of_options">-->
-<!--<option value="option1">Option 1</option>-->
-<!--<option value="option2">Option2</option>-->
-<!--<option value="Option3">Option3</option>-->
-<!--</select></p>-->
-<!--<p style="text-align: center;">Select values(use Ctr key for multiple Selection).</p>-->
-<!--<p style="text-align: center;"><select name="list_box_name[]" size="number_of_options" multiple="multiple">-->
-<!--<option value="option1">Option1</option>-->
-<!--<option value="option2">Option2</option>-->
-<!--<option value="Option3">Option3</option>-->
-<!--</select></p>-->
+<p style="text-align: center;">Select a Device:<strong>&nbsp;</strong><select name="list_box_name" size="number_of_options">
+<option value="option1">Option 1</option>
+<option value="option2">Option2</option>
+<option value="Option3">Option3</option>
+</select></p>
+<p style="text-align: center;">Select values(use Ctr key for multiple Selection).</p>
+<p style="text-align: center;"><select name="list_box_name[]" size="number_of_options" multiple="multiple">
+<option value="option1">Option1</option>
+<option value="option2">Option2</option>
+<option value="Option3">Option3</option>
+</select></p>
 <p style="text-align: center;"><label for="interval">Interval:</label></p>
-<p style="text-align: center;"><label for="interval">Start</label> <input type="datetime-local" id="meeting-time" name="meeting-time" value="2018-06-12T19:30" min="2018-06-07T00:00" max="2018-06-14T00:00" /> <label for="interval">End</label> <input type="datetime-local" id="meeting-time" name="meeting-time" value="2018-06-12T19:30" min="2018-06-07T00:00" max="2018-06-14T00:00" /></p>
-
+<p style="text-align: center;"><label for="interval">Start</label> <input type="number" id="startTime" value="0" />ms <br/><label for="interval">End</label> <input type="number" id="endTime"  value="1"/>ms</p>
+<div style="text-align:center">
+	<input type="button" id="myButton" value="Click for draw"/>
+</div>
 <p>status:<p>
-<html>
-<head>
+
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
-</head>
-<body>
- <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
+
+
+  <div id="myDiv" class="position:relative;width:100%;min-height:400px;"></div>
   <script>
 
-var trace2 = {
-	x: {{ json_x|safe }},
-	y: {{ json_y|safe }},
-  mode: 'lines',
-  type: 'scatter'
+
+$(document).ready(function() {
+    $("#myButton").click(function(){
+			
+			var trace1 = {
+  x: [0, 1, 2, 3, 4, 5, 6, 7, 8,20,23,16,13,22], //here you have to read data from real measurament
+  y: [8, 7, 6, 5, 4, 3, 2, 1, 0,9,10,13,15,17],
+	type: 'scatter'
+	, name:"Original datas"
 };
+var trace2 = {
+  x: [0, 1, 2, 3, 4, 5, 6, 7, 8,12,14,18,20,22], //here you have to read data from neuron network
+  y: [0, 1, 2, 3, 4, 5, 6, 7, 8,11,12,13,14,15],
+	type: 'scatter'
+	, name:"Neuron datas"
+};
+var data = [trace1, trace2];
+var layout = {
+  xaxis: {
+    autotick: false,
+    ticks: 'outside',
+    tick0: $('#startTime').val(), //here you set x-axis interval
+    dtick: 1,
+    ticklen: $('#endTime').val(), //also here is setting
+    tickwidth: 1,
+		tickcolor: '#000',
+		title: "[ms]",
+		
+  },
+  yaxis: {
+    autotick: false,
+    ticks: 'outside',
+    tick0: 0,
+    dtick: 0.5,
+    ticklen: 1,
+    tickwidth: 2,
+		tickcolor: '#000',
+		title: "[HZ]"
+  }
+};    
 
-var data = [trace2];
 
-var layout = {};
+		Plotly.newPlot('myDiv', data, layout);
+		}); 
+	
+});
+ 
 
-Plotly.newPlot('myDiv', data, layout, {showSendToCloud: true});
   </script>
-</body>
-</html>
+
+
 	<P> Figure1: Vibration, temperature, output power of the generator <p> 
 <br>
 
