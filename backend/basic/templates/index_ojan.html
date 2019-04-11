@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+{% load static %}
 <html>
 <head>
 	<title>TBApp</title>
@@ -51,9 +52,9 @@
 				<section>
 		<article margin: 25px class="post">
 			<h3>Description: </h3>
-			<p>  &nbsp; &nbsp; &nbsp;  This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench.
-			   This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench. This is a sample application, the information about the test bench will be Placed here. the following figure will be replaced with actual diagram of the test bench.
-			</p>
+      <p>
+        {{ stuff }}
+      </p>
 			<p>sample Diagram:</p>
 </article>
 		<article class="post">
@@ -86,7 +87,8 @@ img {
 <p>status:<p>
 <html>
 <head>
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+   <script src="{% static 'basic/plotly-latest.min.js'%}" 'unsafe-eval'/></script>
 </head>
 <body>
  <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>

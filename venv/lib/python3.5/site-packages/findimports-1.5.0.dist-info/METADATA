@@ -1,0 +1,167 @@
+Metadata-Version: 2.0
+Name: findimports
+Version: 1.5.0
+Summary: Python module import analysis tool
+Home-page: https://github.com/mgedmin/findimports
+Author: Marius Gedminas
+Author-email: marius@gedmin.as
+License: GPL v2 or later
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Intended Audience :: Developers
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Programming Language :: Python :: 2.7
+Classifier: Programming Language :: Python :: 3.4
+Classifier: Programming Language :: Python :: 3.5
+Classifier: Programming Language :: Python :: 3.6
+Classifier: Programming Language :: Python :: 3.7
+Classifier: Programming Language :: Python :: Implementation :: CPython
+Classifier: Programming Language :: Python :: Implementation :: PyPy
+Classifier: License :: OSI Approved :: GNU General Public License (GPL)
+
+FindImports
+===========
+
+FindImports extracts Python module dependencies by parsing source files.
+It can report names that are imported but not used, and it can generate
+module import graphs in ASCII or graphviz formats.
+
+A distinguishing feature of findimports used to be that it could parse doctest
+code inside docstrings.
+
+Note that not all cases are handled correctly, especially if you use
+'import foo.bar.baz'.
+
+If you need to find unused imports in your codebase, I recommend Pyflakes_
+instead -- it's better maintained and more reliable.  For import graphs
+consider snakefood_.
+
+.. _Pyflakes: https://pypi.python.org/pypi/pyflakes
+.. _snakefood: https://pypi.python.org/pypi/snakefood
+
+
+Misc
+----
+
+Home page: https://github.com/mgedmin/findimports
+
+Old project page: https://launchpad.net/findimports
+
+Licence: GPL v2 or later (https://www.gnu.org/copyleft/gpl.html)
+
+|buildstatus|_ |appveyor|_ |coverage|_
+
+.. |buildstatus| image:: https://api.travis-ci.org/mgedmin/findimports.svg?branch=master
+.. _buildstatus: https://travis-ci.org/mgedmin/findimports
+
+.. |appveyor| image:: https://ci.appveyor.com/api/projects/status/github/mgedmin/findimports?branch=master&svg=true
+.. _appveyor: https://ci.appveyor.com/project/mgedmin/findimports
+
+.. |coverage| image:: https://coveralls.io/repos/mgedmin/findimports/badge.svg?branch=master
+.. _coverage: https://coveralls.io/r/mgedmin/findimports
+
+
+Changes
+=======
+
+
+1.5.0 (2019-03-18)
+------------------
+
+- Support Python 3.6 and 3.7.
+
+- Drop support for Python 2.6 and 3.3.
+
+- Suppress duplicate import warnings if the line in question has a comment.
+
+
+1.4.1 (2016-09-28)
+------------------
+
+- Replace ``getopt`` with ``optparse``.  This changes the ``--help``
+  message as a side effect (`#4
+  <https://github.com/mgedmin/findimports/issues/4>`_).
+
+
+1.4.0 (2015-06-04)
+------------------
+
+- Python 3 support (3.3 and newer).
+
+- Use ``ast`` instead of ``compiler`` (`#1
+  <https://github.com/mgedmin/findimports/issues/1>`_).
+
+
+1.3.2 (2015-04-13)
+------------------
+
+- Fix "cannot find datetime" on Ubuntu 14.04 LTS (`#3
+  <https://github.com/mgedmin/findimports/issues/3>`_).
+
+- 100% test coverage.
+
+
+1.3.1 (2014-04-16)
+------------------
+
+- Added support for relative imports (e.g. ``from .. import foo``).
+
+
+1.3.0 (2013-04-10)
+------------------
+
+- Moved to Github.
+
+- Drop Python 2.4 and 2.5 support.
+
+- Handle unicode docstrings with doctests.
+
+
+1.2.14 (2012-02-12)
+-------------------
+
+- Recognize builtin modules using ``sys.builtin_module_names``.
+  Fixes https://bugs.launchpad.net/findimports/+bug/880989.
+
+
+1.2.13 (2011-04-18)
+-------------------
+
+- Suppress "not a zipfile" warnings about ``*.egg-info`` files listed in
+  sys.path.
+
+
+1.2.12 (2011-04-08)
+-------------------
+
+- Handle zipfile errors when there are plain files that are not zip files
+  on sys.path.
+
+
+1.2.11 (2011-03-30)
+-------------------
+
+- Fix 'could not find cPickle' errors on Python 2.6 and newer.
+
+
+1.2.10 (2010-02-05)
+-------------------
+
+- Ignore 'from __future__ import ...'.
+
+
+1.2.9 (2009-07-07)
+------------------
+
+- Fixed broken and uninstallable source distribution by adding a MANIFEST.in.
+
+
+1.2.8 (2009-07-07)
+------------------
+
+- Is able to find modules inside zip files (e.g. eggs).
+- Fixed deprecation warning on Python 2.6.
+
+
+
