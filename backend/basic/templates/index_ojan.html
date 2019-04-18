@@ -1,0 +1,28 @@
+{% extends 'basic/base.html' %}
+
+{% block content %}
+<div class="plotObject">
+<div class="plotInput">
+		<label for="interval">Start</label> <input type="datetime-local" id="start-time" name="start-time" value="2018-06-12T19:30"/>
+		<label for="interval">End</label> <input type="datetime-local" id="end-time" name="end-time" value="2018-06-12T19:30"/>
+		<textarea id="entity-txt">Entity...</textarea>
+		<textarea id="serie-txt">Serie name...</textarea>
+		
+				<button type="button" onclick="">Plot</button> 
+				<button type="button" onclick="test">test</button> 
+		</div>
+		 <div id="myDiv" class="plot"><!-- Plotly chart will be drawn inside this DIV -->
+			</div>
+		 <script>
+			 var trace2 = {
+			x: {{ json_x|safe }},
+			y: {{ json_y|safe }},
+			mode: 'lines',
+			type: 'scatter'
+		};
+		var data = [trace2];
+		var layout = {};
+		Plotly.newPlot('myDiv', data, layout, {showSendToCloud: true});
+			</script>
+		</div>	
+{% endblock %}
