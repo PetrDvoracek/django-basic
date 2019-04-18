@@ -34,7 +34,7 @@ def index(request):
     except Exception as e:
         pass
 
-    return render(request, 'index_ojan.html', {'json_x':x_data, 'json_y':y_data, 'stuff' : bearer_token})
+    return render(request, 'index_new.html', {'json_x':x_data, 'json_y':y_data, 'stuff' : bearer_token})
 
 def get_time_serie(request):
     pass
