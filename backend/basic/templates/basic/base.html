@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>hello-mindsphere</title>
+	<meta name="keywords" content="web ">
+<link rel="stylesheet " href="{% static 'basic/styles.css'%}">
+<script src="{% static 'basic/plotly-latest.min.js'%}" 'unsafe-eval'/></script>
+<script type="text/javascript" src="{% static 'basic/copy_clip.js'%}"></script>
+</head>
+<body>
+		<textarea>{{ stuff }}</textarea>
+		<button type="button" onclick="copy_clip();">clip</button>
+
+
+{% block content %}
+{% endblock %}
+
+
+	<footer id="main-footer">
+		<p>Copyright &copy; 2019, VSB</p>
+	</footer>
+</body>
+</html>

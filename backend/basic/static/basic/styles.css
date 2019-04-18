@@ -1,0 +1,35 @@
+
+body{
+    background-color: grey;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    max-width: auto;
+}
+.plot{
+    width: 80%;
+    margin-top:20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+}
+.plotInput{
+    width: 15px;
+    margin: auto;
+}
+.plotObject{
+    width:85%;
+}
+.dashboard{
+    width:90%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+    border-radius: 5px;
+    border-color: #eeeeee;
+    background-color: #cccccc;
+}
+.plotDeep{
+    width: 100%;
+}

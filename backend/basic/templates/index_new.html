@@ -1,0 +1,31 @@
+{% extends 'basic/base.html' %}
+
+
+{% block content %}
+<div class="dashboard">
+
+<div class="plotInput">
+{% block input %}
+{% include 'basic/input.html' %}
+{% endblock input %}
+</div>
+
+<div class="plot">
+{% block linePlot %}
+{% include 'basic/plots/line.html' %}
+{% endblock linePlot %}
+</div>
+
+<div class="plot">
+{% block heatPlot %}
+{% include 'basic/plots/heat.html' %}
+{% endblock heatPlot %}
+</div>
+
+<div class="plot">
+{% block deepPlot %}
+{% include 'basic/plots/deep.html' %}
+{% endblock deepPlot %}
+</div>
+</div>
+{% endblock content %}
