@@ -1,34 +1,128 @@
-{% load static %}
-<html>
-<head>
-  <!-- Plotly.js -->
-   <script src="{%static 'basic/plotly-latest.min.js'%}" 'unsafe-eval'/></script>
-</head>
+{% extends 'basic/base.html' %}
 
-<body>
-        <div id="firstDiv"><h2>NECO</h2>
-                {{ stuff }}
-        </div>
-  <div id="myDiv"><!-- Plotly chart will be drawn inside this DIV --></div>
-  <script>
+{% block content %}
+<div class="plotObject">
+<div class="plotInput">
+		<label for="interval">Start</label> <input type="datetime-local" id="start-time" name="start-time" value="2018-06-12T19:30"/>
+		<label for="interval">End</label> <input type="datetime-local" id="end-time" name="end-time" value="2018-06-12T19:30"/>
+		<textarea id="entity-txt">Entity...</textarea>
+		<textarea id="serie-txt">Serie name...</textarea>
+		
+				<button type="button" onclick="">Plot</button> 
+				<button type="button" onclick="test">test</button> 
+		</div>
+		 <div id="plotSerie" class="plot"><!-- Plotly chart will be drawn inside this DIV -->
+			</div>
+		 <script>
+			 var trace2 = {
+			x: {{ json_x|safe }},
+			y: {{ json_y|safe }},
+			mode: 'lines',
+			type: 'scatter'
+		};
+		var data = [trace2];
+		var layout = {};
+		Plotly.newPlot('plotSerie', data, layout, {showSendToCloud: true});
+			</script>
+			<div class="plotInput"></div>
+			<div id="plotHeat" class="plot"></div>
+            <script>
+                var data = [ {
+                    z: [[10, 10.625, 12.5, 15.625, 20],
+                [5.625, 6.25, 8.125, 11.25, 15.625],
+                [2.5, 3.125, 5.0, 8.125, 12.5],
+                [0.625, 1.25, 3.125, 6.25, 10.625],
+                [0, 0.625, 2.5, 5.625, 10]],
+                    type: 'contour'
+                }
+            ];
 
-var trace2 = {
-	x: {{ json_x|safe }},
-	y: {{ json_y|safe }},
-  mode: 'lines',
-  type: 'scatter'
-};
+            var layout = {
+            title: 'Basic Contour Plot'
+            }
 
-var data = [trace2];
+            Plotly.newPlot('plotHeat', data, layout);
+			</script>
+			</div>
+			<div class="plotInput"></div>
+			<div id="plotDeep" class="plot"></div>
+			<script>Plotly.d3.csv('https://raw.githubusercontent.com/plotly/datasets/master/alpha_shape.csv', function(err, rows){
 
-var layout = {};
+    function unpack(rows, key) {
+        return rows.map(function(row) { return row[key]; });
+    }
 
-Plotly.newPlot('myDiv', data, layout, {showSendToCloud: true});
-  </script>
-{%for i in json_y %}
-<p>{{i}}</p>
+    var data = [{
+        x: unpack(rows, 'x'),
+        y: unpack(rows, 'y'),
+        z: unpack(rows, 'z'),
+        mode: 'markers',
+        type: 'scatter3d',
+        marker: {
+          color: 'rgb(23, 190, 207)',
+          size: 2
+        }
+    },{
+        alphahull: 7,
+        opacity: 0.1,
+        type: 'mesh3d',
+        x: unpack(rows, 'x'),
+        y: unpack(rows, 'y'),
+        z: unpack(rows, 'z')
+    }];
 
-{%endfor%}
-</body>
-</html>
+    var layout = {
+        autosize: true,
+        height: 960,
+        scene: {
+            aspectratio: {
+                x: 1,
+                y: 1,
+                z: 1
+            },
+            camera: {
+                center: {
+                    x: 0,
+                    y: 0,
+                    z: 0
+                },
+                eye: {
+                    x: 1.25,
+                    y: 1.25,
+                    z: 1.25
+                },
+                up: {
+                    x: 0,
+                    y: 0,
+                    z: 1
+                }
+            },
+            xaxis: {
+                type: 'linear',
+                zeroline: false
+            },
+            yaxis: {
+                type: 'linear',
+                zeroline: false
+            },
+            zaxis: {
+                type: 'linear',
+                zeroline: false
+            }
+        },
+        title: '3d point clustering',
+        width: 960,
+		margin: {
+			l: 50,
+			r: 50,
+			b: 100,
+			t: 100,
+			pad: 4
+		},
+    };
 
+    Plotly.newPlot('plotDeep', data, layout);
+
+});</script>
+		</div>	
+{% endblock %}

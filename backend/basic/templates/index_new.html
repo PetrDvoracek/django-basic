@@ -1,0 +1,36 @@
+{% extends 'basic/base.html' %}
+
+<script>
+var trace2 = {
+    x: {{ json_x|safe }},
+    y: {{ json_y|safe }},
+    mode: 'lines',
+    type: 'scatter'
+};
+</script>
+
+{% block content %}
+
+{% block input %}
+{% include 'basic/input.html' %}
+{% endblock input %}
+
+<div class="plot">
+{% block linePlot %}
+{% include 'basic/plots/line.html' %}
+{% endblock linePlot %}
+</div>
+
+<div class="plot">
+{% block heatPlot %}
+{% include 'basic/plots/heat.html' %}
+{% endblock heatPlot %}
+</div>
+
+<div class="plot">
+{% block deepPlot %}
+{% include 'basic/plots/deep.html' %}
+{% endblock deepPlot %}
+</div>
+
+{% endblock content %}

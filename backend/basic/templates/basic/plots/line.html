@@ -1,0 +1,13 @@
+<div id="plotSerie"><!-- Plotly chart will be drawn inside this DIV -->
+			</div>
+		 <script>
+			 var trace2 = {
+			x: {{ json_x|safe }},
+			y: {{ json_y|safe }},
+			mode: 'lines',
+			type: 'scatter'
+		};
+		var data = [trace2];
+		var layout = {};
+		Plotly.newPlot('plotSerie', data, layout, {showSendToCloud: true});
+			</script>

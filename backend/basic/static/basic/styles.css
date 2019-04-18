@@ -8,7 +8,10 @@ body{
 }
 .plot{
     width: 80%;
-    margin: 0 auto;
+    margin-top:20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
 }
 .plotInput{
     width: 15px;
@@ -17,9 +20,19 @@ body{
 
 }
 .plotObject{
-    width:70%;
+    width:85%;
 
 }
-.plotSpace{
-    width:80%;
+.dashboard{
+    width:90%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-right: 100px;
+    margin-left: 100px;
+    border-radius: 5px;
+    border-color: #eeeeee;
+    background-color: #cccccc;
+}
+.plotDeep{
+    width: 100%;
 }
