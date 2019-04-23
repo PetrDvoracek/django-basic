@@ -13,12 +13,23 @@ body{
     margin-right: 20px;
     margin-left: 20px;
 }
+.input{
+    width: 12%;
+    margin-top:20px;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    margin-left: 20px;
+    background-color: burlywood;
+    float: right;
+    border-radius: 5px;
+    padding: 20px
+}
 .plotInput{
     width: 15px;
     margin: auto;
 }
 .plotObject{
-    width:85%;
+    width:100%;
 }
 .dashboard{
     width:90%;
@@ -29,7 +40,16 @@ body{
     border-radius: 5px;
     border-color: #eeeeee;
     background-color: #cccccc;
+    padding: 5px;
 }
 .plotDeep{
     width: 100%;
+    margin: 0 auto;
+    
 }
+.wrapper{
+    margin: 0px auto;
+    position: relative;
+    width: 100%;
+}
+
